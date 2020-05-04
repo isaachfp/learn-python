@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 #Program to simulate a die roll with a pearson against computer
 from random import randint
+import time
 def rollDieFunc():
     dieValue = randint(1,6)
     return dieValue;
@@ -21,8 +22,9 @@ if play == "":
     while (playAgain == 'y'):
         playerValue = rollDieFunc()
         print(playerName," value: ",playerValue)
-        print("Computer's turn")
+        print("Computer's turn...")
         computerValue = rollDieFunc()
+        time.sleep(3)
         print("Computer's value: ",computerValue)
         if (playerValue > computerValue):
             print(playerName," win!")
