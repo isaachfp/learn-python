@@ -7,17 +7,31 @@ def rollDieFunc():
 
 #Variaveis
 play = 'x'
+playAgain = 'y'
+playerName = ''
 playerValue = 0
 computerValue = 0
-print(play)
 while (play != '' and play != 'q'):
     play = input("Press (Enter) to play or (q) to quit:")
     print(play)
 
 if play == "":
-    print("Enter key pressed")
-    print(play)
-    x = rollDieFunc()
-    print(x)
+    playerName = input("Enter your Name: ")
+    print(playerName)
+    while (playAgain == 'y'):
+        playerValue = rollDieFunc()
+        print(playerName," value: ",playerValue)
+        print("Computer's turn")
+        computerValue = rollDieFunc()
+        print("Computer's value: ",computerValue)
+        if (playerValue > computerValue):
+            print(playerName," win!")
+        elif (playerValue < computerValue):
+            print("Computer win!")
+        else:
+            print("Tie in the game!")
+        playAgain = input("Play again (y/n)?")
+        if (playAgain == 'n'):
+            print("Bye!")
 else:
-    print("You choose quit")
+    print("Bye!")
